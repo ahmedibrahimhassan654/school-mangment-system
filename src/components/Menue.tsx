@@ -9,7 +9,7 @@ const menuItems = [
       {
         icon: "/home.png",
         label: "Home",
-        href: "/admin",
+        href: "/",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
