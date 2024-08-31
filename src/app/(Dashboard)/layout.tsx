@@ -11,7 +11,7 @@ export default function DashboardLayout({
   return (
     <div className="h-screen flex">
       {/* LEFT */}
-      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4">
+      <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4 flex flex-col">
         <Link
           href="/"
           className="flex items-center justify-center lg:justify-start gap-2"
@@ -19,12 +19,15 @@ export default function DashboardLayout({
           <Image src="/logo.png" alt="logo" width={32} height={32} />
           <span className="hidden lg:block font-bold">Ahmed School</span>
         </Link>
-        <Menu />
+        {/* Ensure Menu takes full height */}
+        <div className="flex-grow">
+          <Menu />
+        </div>
       </div>
       {/* RIGHT */}
-      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll flex flex-col">
+      <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-auto flex flex-col">
         <NavBar />
-        {children}
+        <div className="flex-grow p-4">{children}</div>
       </div>
     </div>
   );
