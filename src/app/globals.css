@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: "Inter", sans-serif;
+}
+.rtl {
+  direction: rtl;
+}
 .react-calendar {
   width: 100% !important;
   border: none !important;
